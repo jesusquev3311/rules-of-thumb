@@ -5,11 +5,17 @@
 
 /**** Global Styles ****/
 body{position: relative;}
-.text-logo{
-  font-size: 34px;
-  line-height: 38px;
-  font-weight: 700;
-  color: $white;
+
+.logo{
+  a{
+    text-decoration: none;
+    .text-logo{
+      font-size: 34px;
+      line-height: 38px;
+      font-weight: 700;
+      color: $white;
+    }
+  }
 }
 /*Triangle */
 .arrow-right-black-alpha{
