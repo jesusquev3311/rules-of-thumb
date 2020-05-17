@@ -1,0 +1,29 @@
+/**** Default rules ****/
+
+/*typography*/
+*{
+  font-family: 'Lato', sans-serif;;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+}
+h1{
+  font-size: 58px;
+  font-weight: 400;
+  line-height: 62px;
+  color: $white;
+  margin-bottom: 25px;
+}
+h2{
+  font-size: 38px;
+  font-weight: lighter;
+  line-height: 45px;
+  color:$gray;
+}
+h3{
+  font-size: 41px;
+  font-weight: lighter;
+  line-height: 45px;
+  color: $white;
+}

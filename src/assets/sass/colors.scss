@@ -1,0 +1,10 @@
+/*Colors*/
+$green: rgb(28,187,180);
+$green-alpha: rgba(28,187,180,0.9);
+$orange:rgb(255,173,29);
+$orange-alpha:rgba(255,173,29,0.9);
+$gray:#333;
+$white:#fff;
+/*backgrounds */
+.bg-orange{background-color: $orange-alpha;}
+.bg-green{background-color: $green-alpha;}
