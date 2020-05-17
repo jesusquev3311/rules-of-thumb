@@ -1,5 +1,5 @@
 /**** Default rules ****/
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 /*typography*/
 *{
   font-family: 'Lato', sans-serif;;
@@ -17,9 +17,10 @@ h1{
 }
 h2{
   font-size: 38px;
-  font-weight: lighter;
+  font-weight: 300;
   line-height: 45px;
   color:$gray;
+  margin-bottom: 30px;
 }
 h3{
   font-size: 41px;
