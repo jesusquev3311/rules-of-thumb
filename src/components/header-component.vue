@@ -1,10 +1,12 @@
 <template>
-    <header>
+    <header class="header-component">
         <v-container>
             <v-row>
                <v-col :md="6">
                    <div class="logo">
-                       <span class="text-logo">Rule of Thumb.</span>
+                       <a href="/">
+                        <span class="text-logo">Rule of Thumb.</span>
+                       </a>
                    </div>
                </v-col>
                <v-col :md="6">
@@ -29,9 +31,15 @@
 </script>
 
 <style lang="scss" scoped>
+    @import "../assets/sass/colors";
     header{
-        padding: 30px 0;
-        background-color: #333;
+        padding: 10px 0 0 0;
+        background-color: rgba(51,51,51,0.1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999;
         nav{
             ul{
                 padding: 0;
@@ -43,7 +51,17 @@
                         text-decoration: none;
                         color: #fff;
                         font-size: 20px;
-                        padding: 5px 20px;
+                        padding: 0 25px;
+                        transition: all .1s;
+                        &:hover{
+                            color: $green;
+                        }
+                        i{
+                            &:before{
+                                font-weight: lighter;
+                                color: white;
+                            }
+                        }
                     }
                     &.login-wrapper{
                         a{

@@ -1,11 +1,11 @@
 <template>
-    <div class="add-section">
+    <section class="add-section">
         <v-container>
             <div class="add">
                 <v-row>
                     <v-col :md="3">
-                        <span class="add-top-text"></span>
-                        <span class="add-bottom-text"></span>
+                        <span class="add-top-text">Speak Out. Be Heard.</span>
+                        <span class="add-bottom-text">Be Counted</span>
                     </v-col>
                     <v-col :md="9">
                         <p class="add-text">
@@ -17,7 +17,7 @@
                 </v-row>
             </div>
         </v-container>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -26,6 +26,44 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+    .add-section{
+        padding: 25px 0 10px 0;
+        .add{
+            background-color: #ebebeb;
+            padding: 20px 25px;
+            position: relative;
+            .row{
+                align-items: center;
+                span{
+                    display: block;
+                    color: #333333;
+                    &.add-top-text{
+                        font-size: 18px;
+                        line-height: 25px;
+                    }
+                    &.add-bottom-text{
+                        font-weight: 700;
+                        font-size: 31px;
+                        line-height: 37px;
+                    }
+                }
+                .add-text{
+                    font-size: 16px;
+                    line-height: 22px;
+                    display: inline-flex;
+                }
+                .add-close{
+                    display: inline-flex;
+                    justify-content: center;
+                    font-size: 30px;
+                    font-weight: 400;
+                    position: absolute;
+                    right: 28px;
+                    top: 30%;
+                    color:#bdbdbd;
+                }
+            }
+        }
+    }
 </style>
