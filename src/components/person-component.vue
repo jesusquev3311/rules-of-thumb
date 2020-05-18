@@ -3,21 +3,21 @@
         <div class="person-wrapper" :style="{'background-image':'url(' + person.backgroundImg + ')'}">
             <div class="person-body">
                 <v-row>
-                    <v-col :md="1" style="padding-bottom: 0">
+                    <v-col cols="12" :xs="12" :sm="12" :md="1" style="padding-bottom: 0">
                         <span class="votes-icon">
                            <v-icon v-if="person.votes.up > person.votes.down || person.votes.total === 0 || person.votes.up === person.votes.down" class="person-thumb green-bg">fas fa-thumbs-up</v-icon>
                            <v-icon v-else class="person-thumb orange-bg">fas fa-thumbs-down</v-icon>
                         </span>
                     </v-col>
-                    <v-col :md="11" style="padding-bottom: 0">
+                    <v-col cols="12" :xs="12" :sm="12" :md="11" style="padding-bottom: 0">
                         <h3>{{ person.name }}</h3>
                     </v-col>
                 </v-row>
                 <v-row>
-                    <v-col :md="1">
+                    <v-col cols="12" :xs="12" :sm="12" :md="1">
 
                     </v-col>
-                    <v-col :md="11">
+                    <v-col cols="12" :xs="12" :sm="12" :md="11">
                         <span class="person-date"><strong>{{ person.date }} month ago</strong> in {{ person.category }}</span>
                         <p class="person-text">{{ person.description }}</p>
                         <div class="person-btns">
@@ -165,6 +165,28 @@
                     }
                 }
             }
+        }
+    }
+    /* responsive */
+    /* mobile devices */
+    @media only screen and (max-width: 600px){
+        .person-wrapper{
+            .person-body{
+                .person-votes{
+                    .vote{
+                        font-size: 16px;
+                        i{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /*small tablets*/
+    @media only screen and (min-width: 601px) and (max-width: 787px){
+        .person-wrapper{
+            margin: 0 auto;
         }
     }
 </style>

@@ -10,7 +10,7 @@
         <h2>Votes</h2>
         <div class="persons-wrapper">
           <v-row>
-            <v-col :md="6" v-for="person in persons" :key="person.name">
+            <v-col cols="12" :xs="12" :sm="12" :md="6" v-for="person in persons" :key="person.name">
               <person-component :person="person" @hola="saveVotes"></person-component>
             </v-col>
           </v-row>

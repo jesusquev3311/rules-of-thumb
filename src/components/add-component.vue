@@ -3,11 +3,11 @@
         <v-container>
             <div class="add">
                 <v-row>
-                    <v-col :md="3">
+                    <v-col cols="12" :xs="12" :sm="12" :md="3">
                         <span class="add-top-text">Speak Out. Be Heard.</span>
                         <span class="add-bottom-text">Be Counted</span>
                     </v-col>
-                    <v-col :md="9">
+                    <v-col cols="12" :xs="12" :sm="12" :md="9">
                         <p class="add-text">
                             Rule of Thumb is a crowd sourced court of public opinion where anyone and everyne can speak freely<br>
                             It's easy. You share your opinion, we analyze and put the data in a public report.

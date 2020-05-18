@@ -3,7 +3,7 @@
         <v-container>
             <div class="add-person-wrapper">
                 <v-row>
-                    <v-col :md="8">
+                    <v-col cols="12" :xs="12" :sm="12" :md="8">
                         <p class="add-person-text">Is there anyone else you would want us to add?</p>
                     </v-col>
                     <v-col :md="4">
@@ -23,6 +23,7 @@
 
 <style lang="scss" scoped>
     #add-person-section{
+        overflow: hidden;
         padding: 10px 0;
         .add-person-wrapper{
             .row{
@@ -47,6 +48,19 @@
                         color: white;
                     }
                 }
+            }
+        }
+        /* responsive */
+        /*mobile*/
+        @media only screen and (max-width: 600px) {
+            .add-person-wrapper{
+                text-align: center;
+            }
+        }
+        /*small tablet */
+        @media only screen and (min-width: 601px) and (max-width: 920px) {
+            .add-person-wrapper{
+                text-align: center;
             }
         }
     }

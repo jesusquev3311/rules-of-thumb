@@ -2,7 +2,7 @@
     <section id="main-banner">
         <v-container>
             <v-row>
-                <v-col :md="6">
+                <v-col cols="12" :md="6">
                     <div class="box-wrapper">
                         <div class="box-body">
                             <span>What's your opinion</span>
@@ -14,12 +14,12 @@
                         <div class="thumbs-wrapper">
                             <v-row>
                                 <v-col :md="6">
-                                    <div class="thumb bg-green thumb-left">
+                                    <div class="thumb bg-green thumb-left" @click="voteSelected('up')">
                                         <v-icon>fas fa-thumbs-up</v-icon>
                                     </div>
                                 </v-col>
                                 <v-col :md="6">
-                                    <div class="thumb bg-orange thumb-right">
+                                    <div class="thumb bg-orange thumb-right" @click="voteSelected('down')">
                                         <v-icon>fas fa-thumbs-down</v-icon>
                                     </div>
                                 </v-col>
@@ -43,14 +43,49 @@
 </template>
 
 <script>
+    import alertify from '../../node_modules/alertifyjs/build/alertify.js'
     export default {
         name: "main-banner",
-        props:['person']
+        props:['person'],
+        data(){
+            return{
+                vote : ''
+            }
+        },
+        methods:{
+            voteSelected(value){
+                this.vote = value;//setting local value
+            },
+            submitVote(vote){
+                //adding the vote
+                switch (vote) {
+                    case 'up':
+                        this.person.votes.up = this.person.votes.up + 1;
+                        break;
+                    case 'down':
+                        this.person.votes.down = this.person.votes.down + 1;
+                        break
+                }
+                //setting vote's total
+                this.person.votes.total = this.person.votes.up + this.person.votes.down;
+                //sending signal to parent  to save persons objects
+                this.$emit('hola', 'hello');
+                alertify.confirm("Thank you for Voting!!, we appreciate your opinion",
+                    ()=>{
+                        alertify.success('Vote again');
+                        this.vote = '';
+                    },
+                    ()=>{
+                        alertify.error('Cancel');
+                    });
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     #main-banner{
+        overflow: hidden;
         background-image: url("../assets/img/pope.jpg");
         background-position: center;
         background-size: cover;
