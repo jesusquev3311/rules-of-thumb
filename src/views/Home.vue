@@ -1,4 +1,4 @@
-<template @update="saveVotes">
+<template>
   <v-content>
     <!-- top banner -->
     <banner :person.sync="persons"></banner>
@@ -11,7 +11,7 @@
         <div class="persons-wrapper">
           <v-row>
             <v-col :md="6" v-for="person in persons" :key="person.name">
-              <person-component :person="person"></person-component>
+              <person-component :person="person" @hola="saveVotes"></person-component>
             </v-col>
           </v-row>
         </div>
@@ -107,12 +107,17 @@ export default {
       }
     }
   },
+  mounted() {
+    this.getVotes();
+  },
   methods:{
     saveVotes(){
+      console.log('hola mundo');
       localStorage.setItem('persons', JSON.stringify(this.persons));
     },
     getVotes(){
-      this.persons = JSON.parse(localStorage.getItem('persons'));
+      const votes = JSON.parse(localStorage.getItem('persons'));//getting the saved votes
+      votes ? this.persons = votes : console.log('no storage');//checking for existing votes
     }
   }
 }

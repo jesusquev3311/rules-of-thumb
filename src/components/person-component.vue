@@ -76,7 +76,7 @@
                 //setting vote's total
                 this.person.votes.total = this.person.votes.up + this.person.votes.down;
                 //sending signal to parent  to save persons objects
-                this.$emit('update');
+                this.$emit('hola', 'hello');
             }
         }
 
