@@ -1,7 +1,9 @@
 <template>
   <v-content>
     <!-- top banner -->
-    <banner :person.sync="persons"></banner>
+    <section id="main-banner">
+            <banner :person="persons[4]"></banner>
+    </section>
     <!-- add section -->
     <add-component></add-component>
     <!-- persons sections -->
