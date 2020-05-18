@@ -9,8 +9,8 @@
                        </a>
                    </div>
                </v-col>
-               <v-col :md="6">
-                   <nav>
+               <v-col :md="6" >
+                   <nav class="d-none d-md-block">
                        <ul>
                            <li><a href="#">Past Trials</a></li>
                            <li><a href="#">How It Works</a></li>
@@ -18,6 +18,7 @@
                            <li><a href="#"><v-icon>fas fa-search</v-icon></a></li>
                        </ul>
                    </nav>
+                   <v-icon id="mobile-menu-icon" class="d-inline-block d-md-none " @click="activateMenu">fas fa-bars</v-icon>
                </v-col>
             </v-row>
         </v-container>
@@ -26,7 +27,16 @@
 
 <script>
     export default {
-        name: "header"
+        name: "header",
+        data(){
+            return{}
+        },
+        methods:{
+            activateMenu(){
+                this.$emit('mobile');
+
+            }
+        }
     }
 </script>
 
@@ -71,6 +81,12 @@
                     }
                 }
             }
+        }
+        #mobile-menu-icon{
+            float: right;
+            margin-right: 20px;
+            color: #fff;
+            cursor: pointer;
         }
     }
 </style>
