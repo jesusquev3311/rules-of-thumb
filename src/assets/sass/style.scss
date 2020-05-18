@@ -1,0 +1,67 @@
+/* colors */
+@import "colors";
+/* Typography */
+@import "typography";
+/*alerts*/
+/**** Global Styles ****/
+body{position: relative;}
+
+.logo{
+  a{
+    text-decoration: none;
+    .text-logo{
+      font-size: 34px;
+      line-height: 38px;
+      font-weight: 700;
+      color: $white;
+    }
+  }
+}
+/*Triangle */
+.arrow-right-black-alpha{
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid rgba(0,0,0,0.23);
+}
+/* mobile menu*/
+#mobile-menu{
+  padding: 40px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.9);
+  top: 0;
+  right: -110%;
+  z-index: 999;
+  transition: all .1s;
+  ul{
+    list-style: none;
+    text-align: center;
+    li{
+      a{
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        color: $green;
+        font-size: 23px;
+        line-height: 39px;
+        padding: 20px 0;
+        border-bottom: 1px dashed white;
+        i{
+          color: $green;
+        }
+      }
+    }
+  }
+  #mobile-close{
+    color: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+.show{
+  right: 0 !important;
+}
