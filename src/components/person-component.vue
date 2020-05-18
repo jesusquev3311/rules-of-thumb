@@ -43,6 +43,7 @@
 </template>
 
 <script>
+    import alertify from '../../node_modules/alertifyjs/build/alertify.js'
     export default {
         name: "person-component",
         props:['person'],
@@ -77,6 +78,14 @@
                 this.person.votes.total = this.person.votes.up + this.person.votes.down;
                 //sending signal to parent  to save persons objects
                 this.$emit('hola', 'hello');
+                alertify.confirm("Thank you for Voting!!, we appreciate your opinion",
+                    ()=>{
+                        alertify.success('Vote again');
+                        this.vote = '';
+                    },
+                    ()=>{
+                        alertify.error('Cancel');
+                    });
             }
         }
 

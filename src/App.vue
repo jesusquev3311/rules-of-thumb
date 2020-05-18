@@ -29,6 +29,7 @@ export default {
 };
 </script>
 <style lang="scss">
+
   /*default font*/
   @import "assets/sass/style";
 
