@@ -1,4 +1,4 @@
-<template>
+<template @update="saveVotes">
   <v-content>
     <!-- top banner -->
     <banner :person.sync="persons"></banner>
@@ -37,6 +37,7 @@ export default {
   },
   data(){
     return{
+      //persons dummy data
       persons:{
         0:{
           id:1,
@@ -104,6 +105,14 @@ export default {
           backgroundImg:'https://lh3.googleusercontent.com/NqnQq4pqrbfPZv8S0WVzBwBZ2-T2w8Ko9lzaMbwcjK5SGVg_0MovRA4kL-h0OfxyDNZ_eo8wuY8UxxabhDQr2h-HfnWeleWgjCeG2aiI5liaZulBjJ_qv0fcCHc7N7RrSmw_8DgG-Nx89X8JtcGVN8r2zf81M-KVm1bDeO_Lr3OYC2lbexOoWLsXmGWuZjPdlNdn9XD2CPF6vvTIytSddnuVs6aIQbeZwEgW4NyxlP0nhxS2EbMNRicikgukJEJLlAiWAC34YhMc-5HVNro1j3CK3oNgn-DCMjFE-EokDzFoDcFgvWLLAhFBlNoPhqwudIlP4QkgZW0_5_zHB07Kdwqrj56vYsMuPP_EwRadKvrdXiKdaJ8feyYSa9ygFuAmu0o9bZo6fGTJMQmE9nOvZGxmr78B4Cm8xrfNgsE-ye50L3uy6SBy_Q3kkAFwskVxyisSG_i8Pvb5SnurYB3mdDkUlsmOWmOfTTphLhetUoTVpwIHzzuIV9FmGpinnL1XjcSAJz2GNxWHOzs-qkw0Hof5L0EX52jwNDZD-9v0Sd1oQ_5VvwNXcbHIMbZOz_fkVEDvCcLBiZV9n_TyzCVDkatxNOVB2er8RgMac9TQhAF0Xz6Sh01ZmjNsY4YKTDW9XmLDwSn4fzhyUAHLw1C9KWiox_E_zRJdA_ScDVRP02rLfd18-j6WohST06sG=w491-h549-no?authuser=0'
         },
       }
+    }
+  },
+  methods:{
+    saveVotes(){
+      localStorage.setItem('persons', JSON.stringify(this.persons));
+    },
+    getVotes(){
+      this.persons = JSON.parse(localStorage.getItem('persons'));
     }
   }
 }
