@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-content>
+      <header-component @mobile="showMenu"></header-component>
+      <home></home>
+      <!-- footer -->
+      <footer-component></footer-component>
+      <!-- mobile menu -->
+      <nav id="mobile-menu" :class="{show:this.menu.active}">
+        <v-icon id="mobile-close" @click="showMenu">far fa-times-circle</v-icon>
+        <ul>
+          <li><a href="#"><v-icon>fas fa-search</v-icon></a></li>
+          <li><a href="#">Past Trials</a></li>
+          <li><a href="#">How It Works</a></li>
+          <li class="login-wrapper"><a href="#">Log In</a><a href="#">Sign Up</a></li>
+        </ul>
+      </nav>
+    </v-content>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import home from './views/Home';
+import headerComponent from './components/header-component';
+import footerComponent from './components/footer-component';
 
-#nav {
-  padding: 30px;
+export default {
+  name: 'App',
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  components: {
+    home,
+    'header-component':headerComponent,
+    'footer-component':footerComponent
+  },
+  data(){
+    return{
+      menu:{
+        active:false
+      }
     }
+  },
+methods:{
+  showMenu(){
+    //toggling menu
+    this.menu.active = !this.menu.active;
   }
 }
+};
+</script>
+<style lang="scss">
+
+  /*default font*/
+  @import "assets/sass/style";
+
 </style>
