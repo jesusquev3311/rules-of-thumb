@@ -6,7 +6,7 @@
                     <v-col cols="12" :xs="12" :sm="12" :md="8">
                         <p class="add-person-text">Is there anyone else you would want us to add?</p>
                     </v-col>
-                    <v-col :md="4">
+                    <v-col cols="12" :sm="12" :md="4">
                         <button type="button">Submit a Name</button>
                     </v-col>
                 </v-row>
@@ -28,6 +28,10 @@
         .add-person-wrapper{
             .row{
                 align-items: center;
+
+                .col-md-4{
+                    text-align: right;
+                }
                 .add-person-text{
                     font-size: 26px;
                     line-height: 30px;
@@ -55,12 +59,22 @@
         @media only screen and (max-width: 600px) {
             .add-person-wrapper{
                 text-align: center;
+                .row{
+                    .col-md-4{
+                        text-align: center;
+                    }
+                }
             }
         }
         /*small tablet */
         @media only screen and (min-width: 601px) and (max-width: 920px) {
             .add-person-wrapper{
                 text-align: center;
+                .row{
+                    .col-md-4{
+                        text-align: center;
+                    }
+                }
             }
         }
     }
