@@ -1,25 +1,25 @@
 <template>
-    <section id="main-banner">
+    <div class="banner-wrapper">
         <v-container>
             <v-row>
                 <v-col cols="12" :md="6">
                     <div class="box-wrapper">
                         <div class="box-body">
                             <span>What's your opinion</span>
-                            <h1>{{ person[4].name }}?</h1>
-                            <p>{{ person[4].description }}</p>
+                            <h1>{{ person.name }}?</h1>
+                            <p>{{ person.description }}</p>
                             <span class="more-info"><v-icon> fab fa-wikipedia-w</v-icon><a href="#">More  information</a></span>
                             <span class="verdict">What's Your Verdict?</span>
                         </div>
                         <div class="thumbs-wrapper">
                             <v-row>
                                 <v-col :md="6">
-                                    <div class="thumb bg-green thumb-left" @click="voteSelected('up')">
+                                    <div class="thumb bg-green thumb-left" @click="submitVote('up')">
                                         <v-icon>fas fa-thumbs-up</v-icon>
                                     </div>
                                 </v-col>
                                 <v-col :md="6">
-                                    <div class="thumb bg-orange thumb-right" @click="voteSelected('down')">
+                                    <div class="thumb bg-orange thumb-right" @click="submitVote('down')">
                                         <v-icon>fas fa-thumbs-down</v-icon>
                                     </div>
                                 </v-col>
@@ -39,7 +39,9 @@
                 </v-col>
             </v-row>
         </div>
-    </section>
+    </div>
+
+
 </template>
 
 <script>
@@ -53,9 +55,6 @@
             }
         },
         methods:{
-            voteSelected(value){
-                this.vote = value;//setting local value
-            },
             submitVote(vote){
                 //adding the vote
                 switch (vote) {
@@ -84,7 +83,7 @@
 </script>
 
 <style lang="scss" scoped>
-    #main-banner{
+    .banner-wrapper{
         overflow: hidden;
         background-image: url("../assets/img/pope.jpg");
         background-position: center;
