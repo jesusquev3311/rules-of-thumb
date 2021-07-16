@@ -76,8 +76,6 @@
                 }
                 //setting vote's total
                 this.person.votes.total = this.person.votes.up + this.person.votes.down;
-                //sending signal to parent  to save persons objects
-                this.$emit('hola', 'hello');
                 alertify.confirm("Thank you for Voting!!, we appreciate your opinion",
                     ()=>{
                         alertify.success('Vote again');
